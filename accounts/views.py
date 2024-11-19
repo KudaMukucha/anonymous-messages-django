@@ -10,7 +10,7 @@ def register_user(request):
         if form.is_valid():
             form.save()
             messages.info(request,'Account created. Please log in.')
-            return redirect('dashboard:login')
+            return redirect('accounts:login')
         else:
             messages.warning(request,'Something went wrong.')
     else:
