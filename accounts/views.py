@@ -15,7 +15,8 @@ def register_user(request):
             messages.warning(request,'Something went wrong.')
     else:
         form = RegisterUserForm()
-        return render(request,'accounts/register.html',{'form':form})
+    
+    return render(request,'accounts/register.html',{'form':form})
     
 def login_user(request):
     if request.method  == 'POST':
