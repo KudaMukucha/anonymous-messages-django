@@ -1,0 +1,27 @@
+{%extends 'dashboard/base.html'%}
+{%load humanize%}
+{%block content%}
+<div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {%if msgs%}
+        {%for msg in msgs%}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Anonymous Message</h5>
+                    <p class="card-text">
+                        {{msg.message}}
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">{{msg.timestamp|naturaltime}}</small>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+        {%else%}
+        <p>You have not received any secret messages yet.</p>
+        {%endif%}
+    </div>
+</div>
+{%endblock%}
